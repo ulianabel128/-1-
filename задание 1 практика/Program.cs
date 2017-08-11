@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace задание_1_практика
 {
@@ -15,6 +16,7 @@ namespace задание_1_практика
             int x;
             int y;
             Random rand = new Random();
+            FileStream file1 = new FileStream("INPUT.TXT", FileMode.Open); //создаем файловый поток 
 
             x = rand.Next(0, 100);
             y = rand.Next(0, 100);
@@ -52,7 +54,7 @@ namespace задание_1_практика
                 }
             }
 
-            Console.WriteLine("Выигрыает игрок №" + igrok);
+            Console.WriteLine(igrok);
             Console.ReadKey();
         }
     }
