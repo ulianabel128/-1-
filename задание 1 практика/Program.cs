@@ -10,6 +10,50 @@ namespace задание_1_практика
     {
         static void Main(string[] args)
         {
+            int[,] mas = new int [100, 100];
+            int igrok = 1;
+            int x;
+            int y;
+            Random rand = new Random();
+
+            x = rand.Next(0, 100);
+            y = rand.Next(0, 100);
+
+            Console.WriteLine("Координаты начальной клетки " + (x + 1) + " и " + (y + 1));
+
+            while ((x==0) || (y==0))
+            {
+                if ((x!=0) & (y!=0))
+                {
+                    x = x - 1;
+                    y = y - 1;
+                    if (igrok == 1) igrok = 2;
+                    else igrok = 1;
+                }
+            }
+
+            while (x==0)
+            {
+                if (y!=0)
+                {
+                    y = y - 1;
+                    if (igrok == 1) igrok = 2;
+                    else igrok = 1;
+                }
+            }
+
+            while (y == 0)
+            {
+                if (x != 0)
+                {
+                    x = x - 1;
+                    if (igrok == 1) igrok = 2;
+                    else igrok = 1;
+                }
+            }
+
+            Console.WriteLine("Выигрыает игрок №" + igrok);
+            Console.ReadKey();
         }
     }
 }
